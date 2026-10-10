@@ -83,3 +83,33 @@ The project generates charts to explore sales performance, product contributions
 - [Region Summary CSV](outputs/region_summary.csv)
 
 ---
+---
+
+## 📊 Project Results & Key Findings
+
+### Key Insights
+
+- **Top-Selling Products:** Identified products contributing the most to total sales.
+- **Regional Performance:** Compared estimated profit across different regions.
+- **Monthly Sales Trends:** Analyzed month-by-month sales fluctuations.
+- **Product Performance:** Used a heatmap to compare product sales across months.
+- **Data-Driven Decisions:** Visualizations help identify sales patterns and areas for further investigation.
+
+### Business Value
+
+- Helps businesses understand product performance.
+- Supports regional sales and profit comparisons.
+- Highlights monthly sales trends.
+- Makes complex sales data easier to understand through visualizations.
+
+### Tools Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+
+> **Note:** This project uses synthetic sample data for educational and demonstration purposes. The findings do not represent actual company performance.
+
+
