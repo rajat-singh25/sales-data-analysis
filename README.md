@@ -128,3 +128,22 @@ Through this project, I practiced working with Pandas, NumPy, Matplotlib, and Se
 - Add a Power BI dashboard.
 - Perform data-quality checks.
 - Explore sales forecasting using machine learning.
+
+---
+
+## 📊 Key Findings
+
+- Analyzed sales performance across multiple products and regions.
+- Compared estimated profitability across different regions.
+- Visualized monthly sales trends to identify fluctuations.
+- Used a heatmap to compare product sales across months.
+- Exported product-wise and region-wise summary reports as CSV files.
+
+## 🛠️ Skills Demonstrated
+
+- Python programming
+- Data cleaning and processing with Pandas
+- Numerical analysis with NumPy
+- Data visualization with Matplotlib and Seaborn
+- Generating CSV reports
+- Organizing a Python data analysis project
