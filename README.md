@@ -2,6 +2,8 @@
 
 🚀 **Live Dashboard:** [Click here to explore](https://udsgzsggkww4ea.streamlit.app/)
 
+[![Open Dashboard](https://img.shields.io/badge/Live-Dashboard-brightgreen?style=for-the-badge)](https://udsgzsggkww4ea.streamlit.app/)
+
 A beginner-friendly data analytics portfolio project using Python, Pandas, Matplotlib, and Seaborn.
 
 > **Dataset note:** `data/sales.csv` is a synthetic sample dataset generated for demonstration and learning. It is not real company/customer data. Monetary values are in Indian Rupees (INR).
