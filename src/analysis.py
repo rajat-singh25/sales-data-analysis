@@ -119,4 +119,114 @@ if product_col:
         x="total_sales",
         y=product_col
     )
-    plt
+    plt.title("Top Products by Sales")
+    plt.xlabel("Total Sales (INR)")
+    plt.ylabel("Product")
+    plt.tight_layout()
+    plt.savefig(CHARTS_DIR / "sales_by_product.png", dpi=150)
+    plt.close()
+
+# Region-wise summary
+if region_col:
+    region_summary = (
+        df.groupby(region_col, dropna=False)
+        .agg(
+            total_sales=(sales_col, "sum"),
+            number_of_records=(sales_col, "count"),
+        )
+        .reset_index()
+        .sort_values("total_sales", ascending=False)
+    )
+
+    if profit_col:
+        region_profit = (
+            df.groupby(region_col, dropna=False)[profit_col]
+            .sum()
+            .reset_index(name="total_profit")
+        )
+        region_summary = region_summary.merge(
+            region_profit, on=region_col
+        )
+
+    region_summary.to_csv(
+        OUTPUT_DIR / "region_summary.csv", index=False
+    )
+
+    print("\nSales by region:")
+    print(region_summary)
+
+    # Profit by region chart
+    if profit_col:
+        plt.figure(figsize=(9, 5))
+        sns.barplot(
+            data=region_summary,
+            x=region_col,
+            y="total_profit"
+        )
+        plt.title("Profit by Region")
+        plt.xlabel("Region")
+        plt.ylabel("Profit (INR)")
+        plt.xticks(rotation=30)
+        plt.tight_layout()
+        plt.savefig(CHARTS_DIR / "profit_by_region.png", dpi=150)
+        plt.close()
+
+# Monthly sales trend
+if date_col:
+    df[date_col] = pd.to_datetime(df[date_col], errors="coerce")
+
+    monthly_df = df.dropna(subset=[date_col]).copy()
+
+    if not monthly_df.empty:
+        monthly_df["month"] = (
+            monthly_df[date_col].dt.to_period("M").astype(str)
+        )
+
+        monthly_sales = (
+            monthly_df.groupby("month")[sales_col]
+            .sum()
+            .reset_index()
+            .sort_values("month")
+        )
+
+        plt.figure(figsize=(11, 5))
+        sns.lineplot(
+            data=monthly_sales,
+            x="month",
+            y=sales_col,
+            marker="o"
+        )
+        plt.title("Monthly Sales Trend")
+        plt.xlabel("Month")
+        plt.ylabel("Sales (INR)")
+        plt.xticks(rotation=45)
+        plt.tight_layout()
+        plt.savefig(
+            CHARTS_DIR / "monthly_sales_trend.png", dpi=150
+        )
+        plt.close()
+
+        # Product-month heatmap
+        if product_col:
+            heatmap_data = monthly_df.pivot_table(
+                index=product_col,
+                columns="month",
+                values=sales_col,
+                aggfunc="sum",
+                fill_value=0
+            )
+
+            plt.figure(figsize=(12, 7))
+            sns.heatmap(heatmap_data, cmap="YlGnBu")
+            plt.title("Product vs Month Sales Heatmap")
+            plt.xlabel("Month")
+            plt.ylabel("Product")
+            plt.tight_layout()
+            plt.savefig(
+                CHARTS_DIR / "product_month_heatmap.png", dpi=150
+            )
+            plt.close()
+
+print("\nAnalysis complete!")
+print(f"Summary files saved in: {OUTPUT_DIR}")
+print(f"Charts saved in: {CHARTS_DIR}")
