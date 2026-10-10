@@ -133,11 +133,16 @@ Through this project, I practiced working with Pandas, NumPy, Matplotlib, and Se
 
 ## 📊 Key Findings
 
-- Analyzed sales performance across multiple products and regions.
-- Compared estimated profitability across different regions.
-- Visualized monthly sales trends to identify fluctuations.
-- Used a heatmap to compare product sales across months.
-- Exported product-wise and region-wise summary reports as CSV files.
+- **Total Orders:** Analyzed 1,200 sample order records.
+- **Total Sales:** Generated ₹6,87,70,810 in sample sales.
+- **Estimated Profit:** ₹1,09,41,788 with an estimated profit margin of 15.91%.
+- **Top-Selling Product:** Laptop generated the highest sales at ₹2,43,98,400, followed by Smartphone at ₹2,29,89,400.
+- **Best-Performing Region:** East recorded the highest estimated profit of ₹23,48,069.
+- **Peak Sales Month:** July 2025 recorded the highest monthly sales of ₹77,90,935.
+- **Data Visualization:** Created four charts to analyze product sales, regional profit, monthly trends, and product performance.
+- **Reports:** Generated product-wise and region-wise CSV summary reports.
+
+> **Note:** All figures are based on a synthetic sample dataset created for learning and demonstration. They do not represent actual company performance.
 
 ## 🛠️ Skills Demonstrated
 
