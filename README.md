@@ -56,3 +56,30 @@ The script prints a sales summary, creates charts in `outputs/charts/`, and expo
 - Add automated data-quality checks and unit tests
 - Compare sales channels and discount levels
 - Build a Streamlit dashboard
+
+- ---
+
+## 📊 Project Visualizations
+
+The project generates charts to explore sales performance, product contributions, regional performance, and monthly trends.
+
+### 1. Sales by Product
+![Sales by Product](outputs/charts/sales_by_product.png)
+
+### 2. Profit by Region
+![Profit by Region](outputs/charts/profit_by_region.png)
+
+### 3. Monthly Sales Trend
+![Monthly Sales Trend](outputs/charts/monthly_sales_trend.png)
+
+### 4. Product Month Heatmap
+![Product Month Heatmap ](outputs/charts/product_month_heatmap.png)
+
+---
+
+## 📁 Generated Reports
+
+- [Product Summary CSV](outputs/product_summary.csv)
+- [Region Summary CSV](outputs/region_summary.csv)
+
+---
